@@ -4,9 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CD6_wi16b141_Vrtis"
+        xmlns:views="clr-namespace:CD6_wi16b141_Vrtis.Views"
+        xmlns:vm="clr-namespace:CD6_wi16b141_Vrtis.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="600"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="10">
+            <Button Content="Overview" Margin="0,0,0,10" FontSize="11" Command="{Binding BtnOverviewClicked}" />
+            <Button Content="My Toys" Margin="0,0,0,10" FontSize="11" Command="{Binding BtnMyToysClicked}" />
+        </StackPanel>
+
+        <ContentControl Grid.Column="1" Content="{Binding CurrentVm}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type vm:OverviewVm}">
+                    <views:OverviewView/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vm:MyToyVm}">
+                    <views:MyToysView/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
     </Grid>
 </Window>

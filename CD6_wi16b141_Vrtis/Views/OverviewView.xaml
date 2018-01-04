@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="CD6_wi16b141_Vrtis.Views.OverviewView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CD6_wi16b141_Vrtis.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             DataContext="{Binding Source={StaticResource Locator}, Path=Overview}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Left / Navigation / Menu -->
+        <ListBox Margin="5" ItemsSource="{Binding Toys}" SelectedItem="{Binding CurrentToy}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1" Width="150" Margin="5">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding Image}" Height="60" Width="60" />
+                            <Label Content="{Binding Description}" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Main Section / Selection -->
+        <ItemsControl Grid.Column="1" ItemsSource="{Binding CurrentToy.Items}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="2" Width="220" Margin="5">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Image}" Height="60" Margin="3"/>
+                                <Label Content="{Binding Description}" VerticalAlignment="Center" Margin="5,0"/>
+                                <Label Content="{Binding AgeRecom}" FontSize="20" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <Button Content="Buy" Command="{Binding DataContext.BtnBuyClicked, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                        CommandParameter="{Binding}" Height="30" Width="195" HorizontalAlignment="Center" Margin="3"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+    </Grid>
+</UserControl>

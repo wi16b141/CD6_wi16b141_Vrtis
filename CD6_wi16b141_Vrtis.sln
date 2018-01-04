@@ -21,5 +21,6 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B5A0D220-5BAD-4A52-B418-F94E07598840}
+		VisualSVNWorkingCopyRoot = ..\CD5_wi16b141_Vrtis\CD5_wi16b141_Vrtis\ViewModel
 	EndGlobalSection
 EndGlobal
