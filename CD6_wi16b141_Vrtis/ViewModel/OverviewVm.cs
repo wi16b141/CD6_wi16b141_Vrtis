@@ -59,9 +59,9 @@ namespace CD6_wi16b141_Vrtis.ViewModel
             playmobil.Add(new ItemVm("Playmobil 2", new BitmapImage(new Uri("../Images/playmobil2.jpg", UriKind.Relative)), "5+"));
             playmobil.Add(new ItemVm("Playmobil 2", new BitmapImage(new Uri("../Images/playmobil2.jpg", UriKind.Relative)), "5+"));
             playmobil.Add(new ItemVm("Playmobil 2", new BitmapImage(new Uri("../Images/playmobil2.jpg", UriKind.Relative)), "5+"));
-            playmobil.Add(new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Images/playmobil3.jpg", UriKind.Relative)), "10+"));
-            playmobil.Add(new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Images/playmobil3.jpg", UriKind.Relative)), "10+"));
-            playmobil.Add(new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Images/playmobil3.jpg", UriKind.Relative)), "10+"));
+            playmobil.Add(new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Images/playmobil3.jpg", UriKind.Relative)), "9+"));
+            playmobil.Add(new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Images/playmobil3.jpg", UriKind.Relative)), "9+"));
+            playmobil.Add(new ItemVm("Playmobil 3", new BitmapImage(new Uri("../Images/playmobil3.jpg", UriKind.Relative)), "9+"));
 
             Toys.Add(new ToyVm("MY Lego", new BitmapImage((new Uri("../Images/lego1.jpg", UriKind.Relative))), lego));
             Toys.Add(new ToyVm("MY Playmobil", new BitmapImage((new Uri("../Images/playmobil1.jpg", UriKind.Relative))), playmobil));
